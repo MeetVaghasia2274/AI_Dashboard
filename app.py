@@ -15,7 +15,7 @@ st.write("Enter booking details to see if a reservation may be cancelled.")
 
 # --- Sidebar inputs ---
 user_input = {}
-for f in features[:10]:
+for f in features:
     user_input[f] = st.sidebar.text_input(f, "0")
 X_input = pd.DataFrame([user_input])
 
@@ -35,6 +35,7 @@ if st.button("🔮 Predict"):
     fig, ax = plt.subplots()
     shap.summary_plot(shap_values, X_input, show=False)
     st.pyplot(fig)
+
 
 
 
